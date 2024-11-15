@@ -336,8 +336,8 @@ Beta_PB_RIS = np.zeros(M)
 hH_PB_RIS = np.zeros((N,M)).astype(complex)
 
     # Construção do canal PB-RIS (1 RIS = um canal do PB até a RIS)
-h_LoS_PB_RIS = np.random.rand(N,M) + 1j*np.random.rand(N,M) # Matriz (1xL)
-h_NLoS_PB_RIS = np.random.rand(N,M) + 1j*np.random.rand(N,M) # Matriz (1xL)
+h_LoS_PB_RIS = np.random.rand(N,M) + 1j*np.random.rand(N,M) # Matriz (NxM)
+h_NLoS_PB_RIS = np.random.rand(N,M) + 1j*np.random.rand(N,M) # Matriz (NxM)
 hH_PB_RIS = (np.sqrt((kappa_PB_RIS)/(1+kappa_PB_RIS)) * h_LoS_PB_RIS) + (np.sqrt((1)/(1+kappa_PB_RIS)) * h_NLoS_PB_RIS) # Canal PB-RIS
 
 for k in range(0,L):
@@ -350,7 +350,7 @@ for k in range(0,L):
 
 # np.shape(hH_PB_RIS)
 
-# ---------------------   Canal RIS - Dispositivos Tamanho (L, K)   ----------------------------------------
+# ---------------------   Canal RIS - Dispositivos Tamanho (M, K)   ----------------------------------------
 
 h_LoS_RIS_D = np.zeros((M,K)).astype(complex)
 h_NLoS_RIS_D = np.zeros((M,K)).astype(complex)
@@ -358,8 +358,8 @@ Beta_RIS_D = np.zeros(K)
 hH_RIS_D = np.zeros((M,K)).astype(complex)
 
     # Construção do canal RIS-Disp;
-h_LoS_RIS_D = np.random.rand(M,K) + 1j*np.random.rand(M,K) # Matriz (LxK)
-h_NLoS_RIS_D = np.random.rand(M,K) + 1j*np.random.rand(M,K) # Matriz (LxK)
+h_LoS_RIS_D = np.random.rand(M,K) + 1j*np.random.rand(M,K) # Matriz (MxK)
+h_NLoS_RIS_D = np.random.rand(M,K) + 1j*np.random.rand(M,K) # Matriz (MxK)
 hH_RIS_D = (np.sqrt((kappa_RIS_D)/(1+kappa_RIS_D)) * h_LoS_RIS_D) + (np.sqrt((1)/(1+kappa_RIS_D)) * h_NLoS_RIS_D) # Canal RIS-D
 
 for j in range(len(dispositivos_ordenados_RIS)):
